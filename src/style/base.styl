@@ -1,0 +1,72 @@
+*
+*:before
+*:after
+  box-sizing inherit
+  -webkit-overflow-scrolling touch
+
+html
+  box-sizing border-box
+  min-width $website-min-width
+  background $c-gray-5
+  font-size $root-el-size
+
+  // downscale for 10% from 1024px to 1600px
+  @media $min-md
+    @media $max-lg
+      font-size floor($root-el-size - 10%)
+
+  @media $max-md-3
+    background $c-white
+
+body
+  margin 0
+  color $c-text
+  font-size $f-size-body
+  font-family $f-base
+  line-height $line-ratio-0
+
+  font-display swap
+  text-rendering optimizeLegibility
+  text-decoration-skip-ink auto
+
+html
+body
+#__nuxt
+#__layout
+  height 100%
+
+button
+  cursor pointer
+
+button
+input
+textarea
+select
+  font inherit
+
+::placeholder
+  color $c-placeholder
+
+:hover
+:active
+  outline none
+
+img
+  vertical-align top
+
+hr
+  margin 0
+  padding 0
+  height 1px
+  border 0
+  background $c-gray-5
+
+b
+strong
+  font-weight bold
+
+label[for]
+  cursor pointer
+
+#webpack-hot-middleware-clientOverlay
+  z-index $z-index-5

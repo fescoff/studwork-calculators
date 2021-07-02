@@ -1,0 +1,46 @@
+.sw-select
+  .item
+    position relative
+    display flex
+    overflow hidden
+    padding $space-0 $space-1
+    cursor pointer
+    user-select none
+
+    &.disabled
+      color $c-placeholder
+
+    &:hover
+      background $c-gray-5
+
+    &.active
+      background $c-gray-5
+      font-weight bold
+
+    &.keyboardSelected
+      background $c-blue-2
+      color $c-white
+
+    &__delimiter
+      display block
+      margin 0 0 5px 0
+      padding 5px 0 0 0
+      height 0
+      border-bottom 1px solid $c-gray-4
+
+    &__label
+      overflow hidden
+      text-overflow ellipsis
+      white-space pre
+
+    &__check
+      position absolute
+      z-index -10
+      visibility hidden
+      opacity 0
+
+    &__icon
+      max-width 25px
+      max-height 25px
+      line-height 25px
+      margin-right $space-0

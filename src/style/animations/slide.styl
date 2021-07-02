@@ -1,0 +1,46 @@
+.slide-down-enter-active
+.slide-down-leave-active
+  overflow hidden
+  max-height 100vh
+  margin-bottom 0
+  transition max-height $transition
+
+.slide-down-enter
+.slide-down-leave-to
+  max-height 0
+
+// Slide from animate css
+.slideDown-enter-active
+.slideInDown
+.slideDown-leave-active
+.slideOutDown
+  animation-duration .15s
+  animation-fill-mode both
+
+.slideDown-enter-active,
+.slideInDown
+  animation-name slideInDown
+
+.slideDown-leave-active
+.slideOutDown
+  animation-name slideOutDown
+
+@keyframes slideInDown
+  from
+    visibility visible
+    transform translate3d(0, -100%, 0)
+    opacity 0
+
+  to
+    transform translate3d(0, 0, 0)
+    opacity 1
+
+@keyframes slideOutDown
+  from
+    transform translate3d(0, 0, 0)
+    opacity 1
+
+  to
+    visibility hidden
+    transform translate3d(0, 100%, 0)
+    opacity 0

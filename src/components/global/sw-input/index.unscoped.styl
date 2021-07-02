@@ -1,0 +1,83 @@
+.sw-input
+  input
+  textarea
+  select
+    display block
+    padding 7px $space-0
+    line-height $line-ratio-0
+    width 100%
+    border 1px solid $c-gray-4
+    border-radius $rad-1
+    color $c-text
+    font inherit
+    transition color $transition,
+               border-color $transition,
+               background $transition,
+               background-color $transition,
+               opacity $transition
+    -webkit-appearance none
+
+    +placeholder-colorize()
+      color $c-placeholder
+
+    &:focus
+      border-color $c-orange
+
+    &[readonly]:focus
+      border-color $c-gray-4
+
+    &:disabled
+      background $c-white
+      pointer-events none
+      color $c-gray-2
+
+      +placeholder-colorize()
+        color $c-gray-3
+
+  input
+  select
+  textarea
+  button
+    &:focus
+      outline none
+
+  input
+  select
+    padding 8px $space-1
+
+  textarea
+    resize none
+    -webkit-appearance none
+
+  &_icon
+    &-left
+      input
+      select
+      textarea
+        padding-left 4rem
+
+    &-right
+      input
+      select
+      textarea
+        padding-right 4rem
+
+  &_valid
+    input
+    select
+    textarea
+      padding-right 4rem
+      border-color $c-green
+
+    .ql-editor
+      border-color $c-green
+
+  &_invalid
+    input
+    select
+    textarea
+      padding-right 4rem
+      border-color $c-red
+
+    .ql-editor
+      border-color $c-red

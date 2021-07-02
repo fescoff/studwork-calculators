@@ -1,0 +1,51 @@
+.sw-spinner
+  overflow hidden
+  padding 36px 0 40px
+  width 100%
+
+  .spinner
+    position relative
+    margin 0 auto
+    text-align center
+    -webkit-animation sk-rotate 2s infinite linear
+    animation sk-rotate 2s infinite linear
+
+    &.medium
+      width 40px
+      height 40px
+
+    &.small
+      width 24px
+      height 24px
+
+    .dot1
+    .dot2
+      position absolute
+      top 0
+      display inline-block
+      width 60%
+      height 60%
+      -webkit-border-radius 100%
+      border-radius 100%
+      background-color $c-blue-2
+      -webkit-animation sk-bounce 2s infinite ease-in-out
+      animation sk-bounce 2s infinite ease-in-out
+    
+    .dot2
+      top auto
+      bottom 0
+      background-color $c-orange
+      -webkit-animation-delay -1s
+      animation-delay -1s
+
+@keyframes sk-rotate
+  100%
+    transform rotate(360deg)
+
+@keyframes sk-bounce
+  0%
+  100%
+    transform scale(0)
+
+  50%
+    transform scale(1)

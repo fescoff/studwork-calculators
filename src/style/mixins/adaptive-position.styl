@@ -1,0 +1,15 @@
+//
+// Adaptive positioning of children elements
+//
+adaptive-position($h-space = $space-0, $v-space = null)
+  if $v-space isnt null
+    $calc-v-space = $v-space
+  else
+    $calc-v-space = $h-space / 2
+
+  display flex
+  flex-wrap wrap
+  margin (- $calc-v-space) (- $h-space)
+
+  > *
+    padding $calc-v-space $h-space

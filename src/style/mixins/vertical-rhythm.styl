@@ -1,0 +1,24 @@
+//
+// Styles vertical margin or padding
+//
+// $space - measure unit, default is $space-1, see global
+// $type - margin or padding (default is margin)
+// $apply - apply styles to selector
+//
+vertical-rhythm($space = $space-1, $type = margin, $apply = '> *')
+  error('vertical-rhythm: space must be an unit') unless $space is a 'unit'
+
+  // любой не первый и не последний элемент
+  {$apply}:not(:first-child):not(:last-child)
+    {$type}-top $space
+    {$type}-bottom $space
+
+  // первый, но не единственный элемент
+  {$apply}:first-child:not(:last-child)
+    {$type}-top 0
+    {$type}-bottom $space
+
+  // последний, но не единственный элемент
+  {$apply}:last-child:not(:first-child)
+    {$type}-top $space
+    {$type}-bottom 0

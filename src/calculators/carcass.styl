@@ -1,0 +1,132 @@
+@import './_include'
+
+.calculator
+  .stats
+    margin-bottom $space-1
+    color $c-gray-2
+
+    &__item
+      &:not(:last-child)
+        margin-right $space-2
+
+    &__counter
+      color $c-text
+
+  .source
+  .decision
+    border-radius $rad-1
+    padding $space-2 $space-3
+
+    /deep/ > *:not(:last-child)
+      margin 0 0 $space-2
+
+  /deep/ .v-rhythm > *:not(:last-child)
+    margin 0 0 $space-2
+
+  .source
+    color $c-white
+    background $c-fuchsia
+
+  .decision
+    background #cceded
+
+    /deep/ > .title:first-child
+      font-size $f-size-4
+      margin-top 0
+
+    &-outer
+      padding-top $space-2
+
+  /deep/ .title
+    font-weight bold
+    margin $space-0 0
+
+  /deep/ .row
+    display flex
+    flex-wrap wrap
+    align-items center
+
+    .col:not(:last-child)
+      margin-right $space-2
+
+    &.-inputs-list
+      margin-top (- $space-2)
+
+      > .col
+        margin-top $space-2
+        width 100%
+  /deep/ .grid-inputs-list
+    display grid
+    grid-template-columns auto 1fr
+    grid-column-gap $space-3
+    grid-row-gap $space-1
+
+    @media $max-sm
+      grid-column-gap $space-1
+      grid-row-gap $space-0
+
+    &__text
+      display flex
+      align-items center
+
+    &__input
+      width 150px
+
+
+  /deep/ .msg
+    display inline-block
+    padding $space-0 $space-1
+    border-radius $rad-1
+
+    &.error
+      background rgba($c-red, 0.9)
+      color $c-white
+
+    &.info
+      background #ffc
+      color $c-text
+
+  /deep/ .katex-display
+    text-align left
+    margin 5px 0 !important
+
+  .sw-radio
+    display flex
+    align-items flex-start
+    flex 1
+
+    .btn
+      &
+      &.checked
+        &
+        &:hover
+          background $c-white
+
+    .circle
+      background $c-fuchsia
+      border-color $c-white
+
+    .label
+      margin-left $space-2
+
+    .katex
+      padding-top 0
+      padding-bottom 0
+
+  .sw-input
+    input
+      width 80px
+      text-align center
+      cursor pointer
+
+  .sw-select
+    color $c-text
+
+    .sw-input input
+      width auto
+
+  @media $max-md
+    .stats
+    .source
+    .decision
+      border-radius 0

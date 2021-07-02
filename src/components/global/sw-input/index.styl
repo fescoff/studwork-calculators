@@ -1,0 +1,82 @@
+.sw-input
+  position relative
+  vertical-align top
+
+  &_invalid
+    overflow visible
+
+  &__container
+    position relative
+
+  &__icon
+    position absolute
+    justify-content center
+    top 50%
+    width 1.5rem
+    height 2rem
+    color $c-gray-1
+    user-select none
+    z-index $z-index-0
+    transform translateY(-50%)
+
+    &_left
+      left 1.5rem
+
+    &_right
+      right 1.5rem
+
+    &_red
+      color $c-red
+
+    &_green
+      color $c-green
+
+  &[validation-icons-position='top'] &__icon_right
+    top 6px
+    bottom auto
+    transform none
+
+  &[validation-icons-position='bottom'] &__icon_right
+    top auto
+    bottom 6px
+    transform none
+
+  &__icon-right
+    right 0
+    left auto
+
+  &__errors
+    font-weight normal
+    font-size 80%
+    margin-top ($space-0 / 3)
+
+    &_red
+      color $c-red
+
+    &_white
+      color $c-white
+
+    &_left
+      text-align left
+
+    &_right
+      text-align right
+
+    &_center
+      text-align center
+
+.title
+  margin 0
+  font-weight bold
+
+.sub-title
+  margin 0
+  color rgba(0, 0, 0, 0.5)
+  font-style italic
+  font-size 85%
+  white-space nowrap
+  overflow hidden
+  text-overflow ellipsis
+
+.title-block
+  margin-bottom 4px

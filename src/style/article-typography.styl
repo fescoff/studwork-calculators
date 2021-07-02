@@ -1,0 +1,257 @@
+$v-space = $space-1
+reference-vertical-rhythm($v-space)
+
+&
+  font-size $f-size-2
+  word-break break-word
+
+.katex
+  white-space nowrap
+  display inline-block
+  vertical-align middle
+  max-width 100%
+  overflow-x auto
+  overflow-y hidden
+  text-align initial
+  padding 4px 2px
+  margin -4px -2px
+
+a
+  text-decoration underline
+
+  &:hover
+    text-decoration none
+
+  &:active
+    opacity 0.75
+
+h1
+h2
+h3
+h4
+h5
+.h1
+.h2
+.h3
+.h4
+.h5
+  color $c-blue-0
+  font-weight bold
+
+h1
+.h1
+  font-size $f-size-5
+
+h2
+.h2
+  font-size $f-size-4
+
+h3
+.h3
+  font-size $f-size-3
+
+h2
+h3
+h4
+h5
+  &
+  &:first-child
+    padding-top $space-2 !important
+
+img
+  text-align left
+  display block
+  max-width 100%
+  margin $f-size-1 0
+
+  &:first-child
+    margin-top 0
+
+  &:last-child
+    margin-bottom 0
+
+mark
+  background-color #ffffa1
+  padding 0 3px 2px
+
+blockquote
+.blockquote
+.custom-block
+.text-left
+.text-center
+.text-right
+  margin-left 0
+  margin-right 0
+  reference-vertical-rhythm()
+
+.text-left
+  text-align left
+
+.text-center
+  text-align center
+
+.text-right
+  text-align right
+
+blockquote
+.blockquote
+.custom-block
+  border-radius $rad-1
+
+blockquote
+.blockquote
+  padding $v-space $space-2
+  background $c-gray-5
+
+  &.yellow
+    background #fcf9ea
+
+  &.green
+    background #e7f6ea
+
+  &.blue
+    background #e8f1f6
+
+  &.red
+    background #ffd7d3
+
+  &.pink
+    background #feebef
+
+.custom-block
+  padding $v-space $space-2
+  background $c-gray-5
+  margin 1em 0
+
+  > header
+  > .header
+  > h2
+  > h3
+  > h4
+  > h5
+    font-size 1em
+    font-weight normal
+
+    > span
+      color #fff
+      font-weight bold
+      border-radius 5px
+      padding 2px 10px 3px
+
+  > header
+  > .header
+  > h2
+  > h3
+  > h4
+  > h5
+    > span
+      background #00ce6c
+
+  &.yellow
+    background #fcf9ea
+
+    > header
+    > .header
+    > h2
+    > h3
+    > h4
+    > h5
+      > span
+        background #efc849
+
+  &.green
+    background #e7f6ea
+
+    > header
+    > .header
+    > h2
+    > h3
+    > h4
+    > h5
+      > span
+        background #00ce6c
+
+  &.blue
+    background #e8f1f6
+
+    > header
+    > .header
+    > h2
+    > h3
+    > h4
+    > h5
+      > span
+        background $c-blue-2
+
+  &.red
+    background #ffd7d3
+
+    > header
+    > .header
+    > h2
+    > h3
+    > h4
+    > h5
+      > span
+        background #ff6558
+
+  &.pink
+    background #fff5f7
+
+    > header
+    > .header
+    > h2
+    > h3
+    > h4
+    > h5
+      > span
+        background #e25a76
+
+.table-responsive
+  display block
+  width 100%
+  overflow-x auto
+  -webkit-overflow-scrolling touch
+  -ms-overflow-style -ms-autohiding-scrollbar
+
+  table
+    width 100%
+    max-width 100%
+    margin-bottom 1rem
+    background-color transparent
+
+table
+  border-collapse collapse
+  width 100%
+
+th
+td
+  background #fff
+  border 1px solid #dddddd
+  padding 10px 15px
+  text-align left
+  vertical-align top
+  word-break normal
+
+thead th
+  font-weight bold
+  text-align left
+
+tbody
+  tr:nth-child(odd)
+    td
+    th
+      background $c-gray-5
+
+sub
+sup
+  font-size 85%
+
+ul
+ol
+  padding 0
+  reference-vertical-rhythm($space-0)
+
+ul
+ol
+  padding 0 0 0 $space-2

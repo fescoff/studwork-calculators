@@ -1,0 +1,95 @@
+//
+// Explode node outside of the primary container with negative margins
+//
+// $padding - add internal block padding to justify with content
+//
+block-explode($padding = true)
+  border-radius 0
+  margin-left (- $container-padding)
+  margin-right (- $container-padding)
+
+  if $padding
+    block-explode-padding()
+
+//
+// Exploded node padding
+//
+block-explode-padding()
+  padding-left $container-padding
+  padding-right $container-padding
+
+//
+// Delimiter between blocks, applies to all children nodes by default
+//
+// $explode - need to explode horizontally for $container-padding width (see globals)
+// $space   - top padding and margin height, default is $space-3
+// $color   - border color, default is $c-gray-5
+// $apply   - apply styles to selector
+//
+block-delimiter($explode = false, $space = $space-3, $color = $c-gray-5, $apply = '> *')
+  {$apply}
+    block-delimiter-padding($explode, $space)
+
+  {$apply}:not(:first-child)
+    block-delimiter-border($delimiter-thin-width, $color)
+
+//
+// Block delimiter around a single node
+//
+// $v-space             - vertical padding
+// $top-border-width    - top border width (set null to avoid)
+// $bottom-border-width - bottom border width (set null to avoid)
+// $color               - border color, default is $c-gray-5
+block-delimiter-around(
+  $v-space = $space-2,
+  $top-border-width = $delimiter-thin-width,
+  $bottom-border-width = $delimiter-thin-width,
+  $color = $c-gray-5
+)
+  padding-top $v-space
+  padding-bottom $v-space
+  block-explode()
+  block-delimiter-border($top-border-width, $color)
+  block-delimiter-border($bottom-border-width, $color, border-bottom)
+
+//
+// Block delimiter, applies to a single node
+//
+// $explode - need to explode horizontally for $container-padding width (see globals)
+// $space   - top margin and padding height, default is $space-3
+// $width   - top border width
+// $color   - border color, default is $c-gray-5
+//
+block-delimiter-single(
+  $explode = false,
+  $space = $space-3,
+  $width = $delimiter-thin-width,
+  $color = $c-gray-5
+)
+  error('block-delimiter-single: explode must be a bool') unless $explode is a 'boolean'
+
+  block-delimiter-padding($explode, $space)
+  block-delimiter-border($width, $color)
+
+//
+// Padding for block delimiter, applies to a single node
+//
+// $explode - need to explode horizontally for $container-padding width (see globals)
+// $space   - top margin and padding height, default is $space-3
+//
+block-delimiter-padding($explode, $space)
+  padding-top $space unless $space is null
+  padding-bottom $space unless $space is null
+
+  if $explode
+    block-explode()
+
+//
+// Border for block delimiter, applies to a single node
+//
+// $width  - borders width
+// $color  - border color
+// $border - border type: border-top, border-bottom, etc.
+//
+block-delimiter-border($width, $color = $c-gray-5, $border = border-top)
+  {$border} $width solid $color unless $width is null

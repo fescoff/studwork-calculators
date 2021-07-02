@@ -1,0 +1,27 @@
+//
+// Cross-browser input placeholder restyling
+//
+// Usage:
+// .selector
+//   +placeholder-colorize()
+//     color lightgray
+//
+placeholder-colorize()
+  &::placeholder
+    {block}
+
+  // Chrome/Opera/Safari
+  &::-webkit-input-placeholder
+    {block}
+
+  // Firefox 19+
+  &::-moz-placeholder
+    {block}
+
+  // IE 10+
+  &:-ms-input-placeholder
+    {block}
+
+  // Firefox 18-
+  &:-moz-placeholder
+    {block}

@@ -1,0 +1,67 @@
+.sw-select
+  position relative
+  display block
+
+  &__native-select
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+
+  .input
+    padding-right 40px !important
+    cursor pointer
+    appearance none
+
+    .opened &
+      border-bottom-right-radius 0
+      border-bottom-left-radius 0
+
+  &.with-icon
+    .input
+      padding-left 54px
+
+      + .item__icon
+        position absolute
+        top 9px
+        bottom 9px
+        left 16px
+
+        @media $max-md
+          top 12px
+
+  .dropdown
+    position absolute
+    top 100%
+    right 0
+    left 0
+    z-index $z-index-2
+    overflow auto
+    -webkit-overflow-scrolling touch
+    max-height 400px
+    width 100%
+    border 1px solid $c-gray-4
+    border-radius 5px
+    background $c-white
+
+    .opened &
+      border-top 0
+      border-top-left-radius 0
+      border-top-right-radius 0
+
+    .no-results
+      padding ($space-0 / 2) $space-0
+      color $c-gray-2
+
+  .arrow-icon
+    position absolute
+    top 0
+    bottom 0
+    right $space-1
+    width 1.4rem
+    color $c-gray-1
+    pointer-events none
+
+  &.disabled .arrow-icon
+    color $c-gray-3

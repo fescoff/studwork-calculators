@@ -1,0 +1,118 @@
+// Font
+$f-base = 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif
+// Constants
+$root-el-size = 10px
+$website-min-width = 320px
+$rad-0 = 3px
+$rad-1 = 5px
+$rad-2 = 20px
+$rad-3 = 15px
+$rad-4 = 10px
+$z-index-0 = 1
+$z-index-1 = 10
+$z-index-2 = 100
+$z-index-3 = 1000
+$z-index-4 = 10000
+$z-index-5 = 100000
+// Lines
+$line-ratio-0 = 1.8 // standard text
+$line-ratio-1 = 1.2 // table/list text
+$line-ratio-2 = 1.5 // heading text
+// Colors
+$c-text = #3d424d
+$c-placeholder = #757575
+$c-white = #fff
+$c-black = #000
+$c-blue-0 = #2d4052
+$c-blue-1 = #22638f
+$c-blue-2 = #3598dc
+$c-blue-3 = #aedaf8
+$c-blue-4 = #799ab0
+$c-blue-5 = #d8f3ff
+$c-blue-6 = #eefaff
+$c-blue-7 = #ecf7fd
+$c-blue-8 = #0088cc
+$c-navbar = $c-blue-8
+$c-purple = #913d88
+$c-fuchsia = #9575cd
+$c-red = #e84c3d
+$c-red-light = #ffeaea
+$c-brown = #904b24
+$c-orange = #ffa726
+$c-orange-light = #fcf8e9
+$c-green = #2fcc71
+$c-green-light = #effbf4
+$c-gray-0 = #424242
+$c-gray-1 = #757575
+$c-gray-2 = #9e9e9e
+$c-gray-3 = #bec3c7
+$c-gray-4 = #ddd
+$c-gray-5 = #f8f8f8
+$c-gray-6 = #ADADAD
+// Font sizes
+$f-size-0 = 1.4rem
+$f-size-1 = 1.6rem
+$f-size-2 = 1.8rem
+$f-size-3 = 2rem
+$f-size-4 = 2.2rem
+$f-size-5 = 2.4rem
+$f-size-6 = 2.6rem
+$f-size-7 = 2.8rem
+$f-size-8 = 3rem
+$f-size-body = $f-size-1
+// Margins and paddings
+$space-0 = 1rem
+$space-1 = 1.5rem
+$space-2 = 2rem
+$space-3 = 3rem
+$space-4 = 4rem
+$container-padding = 30px // MUST be in px to valid addendum with container width
+// Break points
+$xlg = 1840px // 1920px+, content width = 900px
+$lg = 1600px // 1600px+, content width = 740px
+$md = 1024px // 1024px+, content width = 640px
+$md-1 = 1360px // 1366px+, content width = 740px
+$md-2 = 1260px // 1280px+, content width = 640px
+$md-3 = 768px // 768px+, content width = 640px
+$sm = 544px // large mobile, auto content width
+$xsm = 360px // small mobile, auto content width
+// Queries
+$max-xlg = unquote('(max-width: ' + ($xlg - 1) + ')') // 1839px and less
+$min-xlg = unquote('(min-width: ' + $xlg + ')') // 1840px and more
+$max-lg = unquote('(max-width: ' + ($lg - 1) + ')') // 1599px and less
+$min-lg = unquote('(min-width: ' + $lg + ')') // 1600px and more
+$max-md = unquote('(max-width: ' + ($md - 1) + ')') // 1023px and less
+$min-md = unquote('(min-width: ' + $md + ')') // 1024px and more
+$max-md-1 = unquote('(max-width: ' + ($md-1 - 1) + ')') // 1359px and less
+$min-md-1 = unquote('(min-width: ' + $md-1 + ')') // 1360px and more
+$max-md-2 = unquote('(max-width: ' + ($md-2 - 1) + ')') // 1259px and less
+$min-md-2 = unquote('(min-width: ' + $md-2 + ')') // 1260px and more
+$max-md-3 = unquote('(max-width: ' + ($md-3 - 1) + ')') // 767px and less
+$min-md-3 = unquote('(min-width: ' + $md-3 + ')') // 768px and more
+$max-sm = unquote('(max-width: ' + ($sm - 1) + ')') // 543px and less
+$min-sm = unquote('(min-width: ' + $sm + ')') // 544px and more
+$max-xsm = unquote('(max-width: ' + ($xsm - 1) + ')') // 359px and less
+$min-xsm = unquote('(min-width: ' + $xsm + ')') // 360px and more
+// Transitions
+$transition-time = 0.25s
+$transition-fn = ease-out
+$transition = $transition-fn $transition-time
+// shadow
+$box-shadow = 0px 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.05)
+// top-menu
+$top-menu-height = 5.5rem
+$top-menu-color = $c-white
+$top-menu-hover-color = rgba(255, 255, 255, 0.1)
+// modal
+$sw-modal-ver-padding = $space-3
+$sw-modal-hor-padding = $space-4
+$sw-modal-hor-padding-sm = ($sw-modal-hor-padding * 0.7)
+$sw-modal-ver-padding-sm = ($sw-modal-ver-padding * 0.7)
+// delimiter
+$delimiter-thin-width = 0.2rem
+$delimiter-thick-width = 2rem
+// order statuses colors
+$order-status-colors = ($c-gray-3 $c-blue-2 $c-blue-4 $c-blue-1 $c-green $c-red $c-blue-0 $c-orange $c-purple $c-fuchsia)
+
+@import 'mixins'
+

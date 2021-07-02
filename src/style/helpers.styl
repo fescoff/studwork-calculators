@@ -1,0 +1,33 @@
+.unstyle
+  margin 0
+  padding 0
+  border 0
+  background transparent
+  color inherit
+  list-style-type none
+  font inherit
+
+.visuallyhidden
+  position absolute
+  overflow hidden
+  clip rect(0 0 0 0)
+  margin -1px
+  padding 0
+  width 1px
+  height 1px
+  border 0
+
+// responsive hide content classes
+$breakpoints = (xsm sm md md-1 md-2 md-3 lg xlg)
+
+for $b in $breakpoints
+  $max = lookup('$max-' + $b)
+  $min = lookup('$min-' + $b)
+  +prefix-classes('hide\<')
+    .{$b}
+      @media $max
+        display none !important
+  +prefix-classes('hide\>')
+    .{$b}
+      @media $min
+        display none !important

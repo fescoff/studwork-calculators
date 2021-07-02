@@ -1,0 +1,13 @@
+$thickness = 6px
+
+thin-scroll-bar()
+  scrollbar-width thin
+
+  &::-webkit-scrollbar
+    background-color darken($c-gray-5, 5)
+    width $thickness
+    height $thickness
+
+  &::-webkit-scrollbar-thumb
+    border-radius 3px
+    background-color $c-gray-3

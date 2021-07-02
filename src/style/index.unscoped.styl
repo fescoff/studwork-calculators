@@ -1,0 +1,34 @@
+.reference-page
+  .article
+    @import './article-typography'
+
+    & .contains-task-list
+      list-style-type none
+      padding 0
+      margin-top - $space-0
+
+      & .task-list-item
+        margin-bottom 0
+        padding ($space-0 / 2) 0
+
+        &-checkbox
+          position relative
+          margin-right 25px
+          // For hide default checkbox
+          width 0
+          height 0
+
+          $size = 15px
+
+          &:before
+            position absolute
+            bottom 0
+            content " "
+            background-repeat no-repeat
+            background-image url($image-path + '/quiz/cross-gray.svg')
+            background-size 100% 100%
+            height $size
+            width $size
+
+          &[checked]:before
+            background-image url($image-path + '/quiz/check.svg')

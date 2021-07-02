@@ -1,0 +1,24 @@
+//
+// Styles horizontal margin or padding
+//
+// $space - measure unit, default is $space-1, see global
+// $type - margin or padding (default is margin)
+// $apply - apply styles to selector
+//
+horizontal-rhythm($space = $space-1, $type = margin, $apply = '> *')
+  error('horizontal-rhythm: space must be an unit') unless $space is a 'unit'
+
+  // любой не первый и не последний элемент
+  {$apply}:not(:first-child):not(:last-child)
+    {$type}-left $space
+    {$type}-right $space
+
+  // первый, но не единственный элемент
+  {$apply}:first-child:not(:last-child)
+    {$type}-left 0
+    {$type}-right $space
+
+  // последний, но не единственный элемент
+  {$apply}:last-child:not(:first-child)
+    {$type}-left $space
+    {$type}-right 0

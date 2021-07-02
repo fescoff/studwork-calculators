@@ -1,0 +1,23 @@
+.sw-link
+  margin 0
+  padding 0
+  border 0
+  color inherit
+  background-color transparent
+  text-decoration none
+  cursor pointer
+  -webkit-tap-highlight-color transparent
+
+  &_styled
+    color $c-blue-1
+
+    &:hover
+      text-decoration underline
+
+    &[disabled]
+      opacity 0.5
+      cursor default
+
+    &[disabled]:hover
+      cursor not-allowed
+      text-decoration none

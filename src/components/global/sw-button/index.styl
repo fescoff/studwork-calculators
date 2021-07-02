@@ -1,0 +1,211 @@
+sw-btn-colorize($background, $foreground = $c-text)
+  color $foreground
+  background $background
+
+  &:hover
+    background lighten($background, 10)
+
+  &:active
+    background darken($background, 5)
+
+.sw-button
+  display inline-flex
+  align-items center
+  border-radius $rad-0
+  box-shadow none
+  border 2px solid transparent
+  background transparent
+  transition $transition
+  color $c-white
+  line-height 1.7rem
+  white-space nowrap
+  -webkit-tap-highlight-color transparent
+
+  @media $max-sm
+    width 100%
+    max-width 35.4rem
+
+  @media $max-xsm
+    white-space normal
+    line-height 2rem
+    align-items flex-start
+    text-align left
+
+  &:hover
+  &:active
+  &:focus
+    text-decoration none
+
+  &__icon
+    display inline-flex
+    align-items center
+    width 1.7rem
+    height 1.7rem
+
+    @media $max-xsm
+      width 2rem
+      height 2rem
+
+    ^[0]_empty &
+      margin-right 0
+      padding-left 0
+
+    &_left
+      margin-right 1rem
+
+      ^[0]_empty &
+        margin-right 0
+
+    &_right
+      padding-left 1rem
+      margin-left auto
+      width 2.7rem
+
+      ^[0]_empty &
+        margin-left 0
+
+      @media $max-xsm
+        width 3rem
+
+  &__rotate
+    rotating()
+
+  &_empty
+    justify-content center
+
+  &_bold
+    font-weight bold
+
+  &_big
+    font-size $f-size-2
+    padding 1.2rem 1.8rem
+
+    &^[0]_empty
+      width 4rem
+      padding-left 0.5rem
+      padding-right 0.5rem
+
+  &_medium
+    font-size $f-size-1
+    padding 1.25rem 1.3rem
+
+    &^[0]_empty
+      width 3rem
+      padding-left 0.35rem
+      padding-right 0.35rem
+
+  &_small
+    font-size $f-size-0
+    padding 0.2rem 1rem
+
+    @media $max-md
+      padding-top 0.75rem
+      padding-bottom 0.75rem
+
+    &^[0]_empty
+      width 2.5rem
+      padding-left 0.2rem
+      padding-right 0.2rem
+
+  &_gray
+    sw-btn-colorize($c-gray-2, $c-white)
+
+  &_green
+    sw-btn-colorize($c-green, $c-white)
+
+  &_red
+    sw-btn-colorize($c-red, $c-white)
+
+  &_blue
+    sw-btn-colorize($c-blue-2, $c-white)
+
+  &_orange
+    sw-btn-colorize($c-orange, $c-white)
+
+  &_light-blue
+    background $c-blue-5
+    color $c-text
+
+    &:hover
+      background darken($c-blue-5, 5)
+
+    &:active
+      background darken($c-blue-5, 10)
+
+  &_transparent
+    color $c-gray-1
+    border-color $c-gray-2
+
+    &:hover
+      background lighten($c-gray-5, 10)
+
+    &:active
+      background darken($c-gray-5, 5)
+
+  &_transparent-white
+    border-color $c-white
+
+    &:hover
+      background rgba(0, 0, 0, 0.1)
+
+    &:active
+      background rgba(0, 0, 0, 0.2)
+
+  &_transparent-blue
+    color $c-blue-2
+    border-color $c-blue-2
+
+    &:hover
+    &:focus
+      color $c-white
+      background $c-blue-2
+
+    &:active
+      color $c-white
+      background alpha($c-blue-2, 0.75)
+
+  &_transparent-orange
+    color $c-orange
+    background-color transparent
+    border-color $c-orange
+
+    &:hover
+    &:focus
+      color lighten($c-orange, 15)
+      border-color lighten($c-orange, 15)
+
+  &_transparent-purple
+    color $c-purple
+    background-color transparent
+    border-color $c-purple
+
+    &:hover
+    &:focus
+      color lighten($c-purple, 15)
+      border-color lighten($c-purple, 15)
+
+  &_transparent-green
+    color $c-green
+    background-color transparent
+    border-color $c-green
+
+    &:hover
+    &:focus
+      color lighten($c-green, 15)
+      border-color lighten($c-green, 15)
+
+  &_transparent-gray
+    color $c-gray-2
+    background-color transparent
+    border-color $c-gray-2
+
+    &:hover
+    &:focus
+      color $c-gray-3
+      border-color $c-gray-3
+
+  &[disabled]
+  &[disabled]:focus
+  &[disabled]:active
+    opacity 0.5
+    cursor not-allowed
