@@ -25,6 +25,30 @@ export const calculators = {
     component: () => import('./matrix-sum'),
     title: 'Сложение матриц',
   },
+  fibonacci: {
+    component: () => import('./fibonacci-numbers'),
+    title: 'Ряд чисел Фиббоначи',
+  },
+  factorial: {
+    component: () => import('./factorial'),
+    title: 'Факториал числа',
+  },
+  roundedNumbers: {
+    component: () => import('./rounded-numbers'),
+    title: 'Округление чисел',
+  },
+  perfectSquare: {
+    component: () => import('./perfect-square'),
+    title: 'Идеальный квадрат',
+  },
+  divisionWithRemainder: {
+    component: () => import('./division-with-remainder'),
+    title: 'Деление с остатком',
+  },
+  sumOfNumbersToN: {
+    component: () => import('./sum-of-numbers-to-n'),
+    title: 'Сумма числел от 1 до N',
+  },
   // example: {
   //   component: () => import('./'),
   //   title: '',
