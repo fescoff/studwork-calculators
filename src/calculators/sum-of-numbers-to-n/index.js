@@ -5,7 +5,6 @@ import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  // todo: Название калькулятора
   name: 'sum-of-numbers-to-n',
   data: () => ({
     form: {
@@ -34,13 +33,11 @@ export default {
     decision() {
       if (this.formInvalid) return null;
       let sum = 0;
-      let arr = [];
+
       for (let i = 1; i <= this.length; i++) {
-        arr.push(i);
         sum += i;
       }
-      const str = arr.join('+');
-      return { sum, str };
+      return sum;
     },
   },
 };

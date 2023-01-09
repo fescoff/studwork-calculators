@@ -14,8 +14,8 @@ export default {
   computed: {
     length() {
       return inputNumber(this.form.length, {
-        float: true,
-        negative: true,
+        float: false,
+        negative: false,
         divisional: false,
       });
     },

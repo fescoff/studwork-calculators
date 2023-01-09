@@ -49,6 +49,22 @@ export const calculators = {
     component: () => import('./sum-of-numbers-to-n'),
     title: 'Сумма числел от 1 до N',
   },
+  sumOfNumbersToN: {
+    component: () => import('./gcd-lcm'),
+    title: 'НОД и НОК двух чисел',
+  },
+  sequential: {
+    component: () => import('./sequential'),
+    title: 'Последовательное число',
+  },
+  primeNumbers: {
+    component: () => import('./prime-numbers'),
+    title: 'Простое число',
+  },
+  primeFactors: {
+    component: () => import('./prime-factors'),
+    title: 'Разложение числа на простые множители',
+  },
   // example: {
   //   component: () => import('./'),
   //   title: '',

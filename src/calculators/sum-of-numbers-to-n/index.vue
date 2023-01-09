@@ -35,15 +35,22 @@
         <div>
           <Formula
             :config="{ displayMode: true }"
-            :text="`${decision.sum}= ${decision.str}`"
+            :text="`
+          S= {N \\cdot(N+1)\\over2} `"
           />
         </div>
-        <div></div>
+        <div>
+          <Formula
+            :config="{ displayMode: true }"
+            :text="`
+          {${form.length}  \\cdot(${form.length}+1)\\over2} =${decision} `"
+          />
+        </div>
       </div>
       <div />
       <div>
         <div class="title">Ответ:</div>
-        <div><Formula :text="`${decision.sum}`" /></div>
+        <div><Formula :text="`${decision}`" /></div>
       </div>
     </template>
   </Carcass>
