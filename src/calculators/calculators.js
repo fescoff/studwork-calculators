@@ -65,6 +65,26 @@ export const calculators = {
     component: () => import('./prime-factors'),
     title: 'Разложение числа на простые множители',
   },
+  numberExponentiations: {
+    component: () => import('./number-exponentiation'),
+    title: 'Возведение числа в степень',
+  },
+  exponentPower: {
+    component: () => import('./exponent-power'),
+    title: 'Возведение экспоненты в степень',
+  },
+  squareRoot: {
+    component: () => import('./square-root'),
+    title: 'Квадратный корень',
+  },
+  cubeRoot: {
+    component: () => import('./cube-root'),
+    title: 'Кубический корень',
+  },
+  nthRoot: {
+    component: () => import('./nth-root'),
+    title: 'Извлечение корня n-й степени из числа',
+  },
   // example: {
   //   component: () => import('./'),
   //   title: '',

@@ -23,7 +23,6 @@ export function factorial(num) {
   for (let i = 1; i <= num; i++) {
     result *= i;
   }
-
   return result;
 }
 
@@ -62,6 +61,20 @@ export const numberValidator = (
     required2('Введите число'),
     isNumber('Число некорректно'),
     isIntegerNumber('Должно быть целым числом'),
+    minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
+    max(maximum),
+    ...validators,
+  );
+
+export const numberValidator2 = (
+  value,
+  { maximum = 99, minimum = null } = {},
+  ...validators
+) =>
+  validator(
+    value,
+    required2('Введите число'),
+    isNumber('Число некорректно'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
     max(maximum),
     ...validators,
@@ -118,21 +131,21 @@ export const radianValidator = (value, ...validators) =>
   );
 
 export const radGrad = {
-  '0': 0,
-  '0.524': 30,
-  '0.785': 45,
-  '1.047': 60,
-  '1.571': 90,
-  '2.094': 120,
-  '2.356': 135,
-  '2.618': 150,
-  '3.142': 180,
-  '3.665': 210,
-  '3.927': 225,
-  '4.189': 240,
-  '4.712': 270,
-  '5.236': 300,
-  '5.498': 315,
-  '5.76': 330,
-  '6.283': 360,
+  0: 0,
+  0.524: 30,
+  0.785: 45,
+  1.047: 60,
+  1.571: 90,
+  2.094: 120,
+  2.356: 135,
+  2.618: 150,
+  3.142: 180,
+  3.665: 210,
+  3.927: 225,
+  4.189: 240,
+  4.712: 270,
+  5.236: 300,
+  5.498: 315,
+  5.76: 330,
+  6.283: 360,
 };
