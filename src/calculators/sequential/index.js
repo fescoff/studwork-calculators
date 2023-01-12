@@ -5,11 +5,9 @@ import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  // todo: Название калькулятора
   name: 'is-sequential',
   data: () => ({
     form: {
-      // todo: Переменные для расчёта
       number: '',
     },
   }),
@@ -22,7 +20,6 @@ export default {
       });
     },
 
-    // todo: Список валидаторов для обработанных данных из формы
     validators() {
       return {
         number: scalarNumberValidator(this.number, 'Длина'),
@@ -37,7 +34,6 @@ export default {
     decision() {
       if (this.formInvalid) return null;
 
-      // todo: расчёт результата
       function isSequential(num) {
         for (let i = 1; i < num; i++) {
           let sum = 0;

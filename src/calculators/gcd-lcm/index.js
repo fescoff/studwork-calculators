@@ -8,13 +8,11 @@ export default {
   name: 'gcd-lcm',
   data: () => ({
     form: {
-      // todo: Переменные для расчёта
       a: '',
       b: '',
     },
   }),
   computed: {
-    // todo: Приведение данных из формы к нормальным типам для вычислений
     a() {
       return inputNumber(this.form.a, {
         float: true,
@@ -29,8 +27,6 @@ export default {
         divisional: false,
       });
     },
-
-    // todo: Список валидаторов для обработанных данных из формы
     validators() {
       return {
         a: numberValidator(this.a, { maximum: 99999 }),
@@ -46,18 +42,15 @@ export default {
     decision() {
       if (this.formInvalid) return null;
 
-      // todo: расчёт результата
-      // Функция для разложения числа на простые множители
       function getPrimeFactors(n) {
         let factors = [];
-        // Перебираем все числа от 2 до n
         for (let i = 2; i <= n; i++) {
           while (n % i === 0) {
             factors.push(i);
             n = n / i;
           }
         }
-        // Возвращаем строку с множителями
+
         return factors;
       }
 
@@ -79,7 +72,6 @@ export default {
       const lcm = (this.a * this.b) / gcd;
       const factorsA = getPrimeFactors(this.a);
       const factorsB = getPrimeFactors(this.b);
-
       return { lcm, gcd, factorsA, factorsB, commonFactors };
     },
   },

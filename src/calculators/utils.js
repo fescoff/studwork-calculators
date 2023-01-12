@@ -1,6 +1,7 @@
 import {
   validator,
   required2,
+  required,
   isNumber,
   isIntegerNumber,
   min,
@@ -28,7 +29,8 @@ export function factorial(num) {
 
 export const formulaValidator = (value, required = true, ...validators) => {
   // @todo Починить эту регулярку
-  const regex = /^[|.`xyzsqrt()sexpsinco<>=st,ancotlg0-9+\\^*/-]+$/gi;
+  
+  const regex = /^[|.`x yzsqrt()sexpsinco<>=st,ancotlg0-9+\\^*/-]+$/gi;
 
   const formValidator = value => {
     value = value.trim();
@@ -79,6 +81,9 @@ export const numberValidator2 = (
     max(maximum),
     ...validators,
   );
+
+export const test = (value, ...validators) =>
+  validator(value, required('Введите число'), ...validators);
 
 export const scalarNumberValidator = (value, name, ...validators) =>
   validator(

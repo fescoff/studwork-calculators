@@ -85,6 +85,42 @@ export const calculators = {
     component: () => import('./nth-root'),
     title: 'Извлечение корня n-й степени из числа',
   },
+  avgArithmetic: {
+    component: () => import('./avg-arithmetic'),
+    title: 'Среднее арифметическое нескольких чисел',
+  },
+  geometricMean: {
+    component: () => import('./geometric-mean'),
+    title: 'Среднее геометрическое нескольких чисел',
+  },
+  harmonicMean: {
+    component: () => import('./harmonic-mean'),
+    title: 'Среднее гармоническое нескольких чисел',
+  },
+  standardDeviation: {
+    component: () => import('./standard-deviation'),
+    title: 'Среднее квадратичное отклонение',
+  },
+  sumOfNumbers: {
+    component: () => import('./sum-of-numbers'),
+    title: 'Сумма нескольких чисел',
+  },
+  multiplyOfNumbers: {
+    component: () => import('./multiply-of-numbers'),
+    title: 'Произведение нескольких чисел',
+  },
+  tetrahedralNumber: {
+    component: () => import('./tetrahedral-number'),
+    title: 'Тетраэдральное число',
+  },
+  squarePyramidalNumber: {
+    component: () => import('./square-pyramidal-number'),
+    title: 'Квадратное пирамидальное число',
+  },
+  octahedralNumber: {
+    component: () => import('./octahedral-number'),
+    title: 'Октаэдральное число',
+  },
   // example: {
   //   component: () => import('./'),
   //   title: '',

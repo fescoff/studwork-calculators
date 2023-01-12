@@ -13,7 +13,6 @@ export default {
     },
   }),
   computed: {
-    // todo: Приведение данных из формы к нормальным типам для вычислений
     number() {
       return inputNumber(this.form.number, {
         float: true,
@@ -35,17 +34,14 @@ export default {
         power: numberValidator2(this.power, { minimum: -99999 }),
       };
     },
-    // todo: текст глобальной ошибки
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
-
+      
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-
-      // todo: расчёт результата
       return Math.pow(this.number, 1 / this.power);
     },
   },

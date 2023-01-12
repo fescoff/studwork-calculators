@@ -1,11 +1,11 @@
 import { inputNumber } from '@/utils';
 
-import { numberValidator2 } from '../utils';
+import { numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  name: 'square-root',
+  name: 'tetrahedral-number',
   data: () => ({
     form: {
       number: '',
@@ -14,17 +14,17 @@ export default {
   computed: {
     number() {
       return inputNumber(this.form.number, {
-        float: true,
+        float: false,
         negative: false,
-        divisional: true,
+        divisional: false,
       });
     },
-
     validators() {
       return {
-        number: numberValidator2(this.number, { minimum: -99999, maximum: 99999 }),
+        number: numberValidator(this.number),
       };
     },
+
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
 
@@ -34,7 +34,7 @@ export default {
     decision() {
       if (this.formInvalid) return null;
 
-      return Math.sqrt(this.number);
+      return (this.number * (2 * this.number * this.number + 1)) / 3;
     },
   },
 };

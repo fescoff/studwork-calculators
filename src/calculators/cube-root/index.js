@@ -5,16 +5,13 @@ import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  // todo: Название калькулятора
-  name: 'calculator-name',
+  name: 'cube-root',
   data: () => ({
     form: {
-      // todo: Переменные для расчёта
       number: '',
     },
   }),
   computed: {
-    // todo: Приведение данных из формы к нормальным типам для вычислений
     number() {
       return inputNumber(this.form.number, {
         float: true,
@@ -23,13 +20,12 @@ export default {
       });
     },
 
-    // todo: Список валидаторов для обработанных данных из формы
     validators() {
       return {
         number: numberValidator2(this.number, { minimum: -99999, maximum: 99999 }),
       };
     },
-    // todo: текст глобальной ошибки
+
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
 

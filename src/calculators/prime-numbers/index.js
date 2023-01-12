@@ -25,7 +25,6 @@ export default {
         number: scalarNumberValidator(this.number),
       };
     },
-    // todo: текст глобальной ошибки
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
 

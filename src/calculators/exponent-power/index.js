@@ -24,7 +24,6 @@ export default {
         power: numberValidator2(this.power, { minimum: -9999, maximum: 9999 }),
       };
     },
-    // todo: текст глобальной ошибки
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
 
