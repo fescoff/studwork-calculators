@@ -1,14 +1,8 @@
 <template>
-  <Carcass
-    ref="carcass"
-    :stats="stats"
-  >
+  <Carcass ref="carcass" :stats="stats">
     <template slot="source">
-      <form
-        class="v-rhythm"
-        @submit.prevent="doDecision"
-      >
-        <div class="row title">Задайте сторону квадрата&nbsp; <Formula text="a" />:</div>
+      <form class="v-rhythm" @submit.prevent="doDecision">
+        <div class="row title">Задайте сторону квадрата:</div>
 
         <div class="row -inputs-list">
           <CalculatorInput
@@ -24,10 +18,7 @@
       </form>
     </template>
 
-    <template
-      slot="decision"
-      slot-scope="{ form, decision }"
-    >
+    <template slot="decision" slot-scope="{ form, decision }">
       <div class="title">Вычисление периметра квадрата по заданной стороне</div>
       <div>
         <div class="title">Дано:</div>
@@ -36,10 +27,7 @@
       <div>
         <div class="title">Решение:</div>
         <div>
-          <Formula
-            :config="{ displayMode: true }"
-            :text="`P= a \\cdot 4`"
-          />
+          <Formula :config="{ displayMode: true }" :text="`P= a \\cdot 4`" />
         </div>
         <div>
           <Formula
@@ -57,5 +45,4 @@
   </Carcass>
 </template>
 
-<script src="./index.js">
-</script>
+<script src="./index.js"></script>

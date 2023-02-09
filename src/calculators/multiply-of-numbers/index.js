@@ -1,9 +1,9 @@
-import { test } from '../utils';
+import { arrayNumber } from '../utils';
 import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  name: 'avg-arithmetic',
+  name: 'multiply-of-numbers',
   data: () => ({
     form: {
       numbers: '',
@@ -11,11 +11,14 @@ export default {
   }),
   computed: {
     numbers() {
-      return (this.form.numbers.match(/\d+/g) ?? []).map(Number);
+      return this.form.numbers
+        .split(/[ ,]+/)
+        .map(x => parseFloat(x))
+        .filter(x => !isNaN(x));
     },
     validators() {
       return {
-        numbers: test(this.numbers),
+        numbers: arrayNumber(this.numbers),
       };
     },
     errorMessage() {
@@ -26,8 +29,8 @@ export default {
 
     decision() {
       if (this.formInvalid) return null;
-
-      return this.numbers.reduce((acc, val) => acc * val);
+      const result = this.numbers.reduce((acc, val) => acc * val);
+      return this.round(result, 3);
     },
   },
 };

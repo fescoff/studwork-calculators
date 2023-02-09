@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { scalarNumberValidator } from '../utils';
+import { numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -8,26 +8,24 @@ export default {
   name: 'fibonacci-numbers',
   data: () => ({
     form: {
-      length: '',
+      n: '',
     },
   }),
   computed: {
-    length() {
-      return inputNumber(this.form.length, {
+    n() {
+      return inputNumber(this.form.n, {
         float: false,
         negative: false,
         divisional: false,
       });
     },
-
     validators() {
       return {
-        length: scalarNumberValidator(this.length),
+        n: numberValidator(this.n),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
-
+      if (!this.hasAttempt || this.formInvalid) return this.validators.n.message;
       return null;
     },
 
@@ -45,7 +43,7 @@ export default {
         }
         return fibonacciNumbers;
       }
-      return getFibonacciNumbers(this.length);
+      return getFibonacciNumbers(this.n);
     },
   },
 };

@@ -9,7 +9,7 @@ export default {
   data: () => ({
     form: {
       number: '',
-      length: '',
+      precision: '',
     },
   }),
   computed: {
@@ -20,8 +20,8 @@ export default {
         divisional: false,
       });
     },
-    length() {
-      return inputNumber(this.form.length, {
+    precision() {
+      return inputNumber(this.form.precision, {
         float: false,
         negative: true,
         divisional: false,
@@ -31,18 +31,17 @@ export default {
     validators() {
       return {
         number: scalarNumberValidator(this.number),
-        length: numberValidator(this.length, { minimum: 0 }),
+        precision: numberValidator(this.precision, { minimum: 0 }),
       };
-    },  
+    },
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
-
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-      return Number(Math.round(this.number + 'e' + this.length) + 'e-' + this.length);
+      return this.round(this.number, this.precision);
     },
   },
 };

@@ -5,7 +5,7 @@ import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  name: 'tetrahedral-number',
+  name: 'octahedral-number',
   data: () => ({
     form: {
       number: '',

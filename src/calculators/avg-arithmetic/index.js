@@ -1,4 +1,4 @@
-import { test } from '../utils';
+import { arrayNumber } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -11,25 +11,26 @@ export default {
   }),
   computed: {
     numbers() {
-      return (this.form.numbers.match(/\d+/g) ?? []).map(Number);
+      return this.form.numbers
+        .split(/[ ,]+/)
+        .map(x => parseFloat(x))
+        .filter(x => !isNaN(x));
     },
     validators() {
       return {
-        numbers: test(this.numbers),
+        numbers: arrayNumber(this.numbers),
       };
     },
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
-
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-
       const sum = this.numbers.reduce((a, b) => a + b, 0);
       const avg = sum / this.numbers.length;
-      return avg;
+      return this.round(avg, 3);
     },
   },
 };

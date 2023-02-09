@@ -2,7 +2,7 @@
   <Carcass ref="carcass" :stats="stats">
     <template slot="source">
       <form class="v-rhythm" @submit.prevent="doDecision">
-        <div class="row title">Введите набор чисел через любой разделитель:</div>
+        <div class="row title">Введите набор чисел через запятую или пробел:</div>
         <div class="row -inputs-list">
           <CalculatorInput
             v-model="form.numbers"
@@ -19,7 +19,7 @@
         </SwTransitionHeight>
         <SubmitButton />
       </form>
-    </template> 
+    </template>
     <template slot="decision" slot-scope="{ form, decision }">
       <div class="title">Среднее квадратичное отклонение</div>
       <div>

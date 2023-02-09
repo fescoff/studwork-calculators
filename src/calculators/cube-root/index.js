@@ -28,14 +28,13 @@ export default {
 
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
-
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-
-      return Math.cbrt(this.number);
+      const result = Math.cbrt(this.number);
+      return this.round(result, 3);
     },
   },
 };

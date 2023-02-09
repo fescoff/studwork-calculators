@@ -27,7 +27,7 @@ export const calculators = {
   },
   fibonacci: {
     component: () => import('./fibonacci-numbers'),
-    title: 'Ряд чисел Фиббоначи',
+    title: 'Ряд чисел Фибоначи',
   },
   factorial: {
     component: () => import('./factorial'),

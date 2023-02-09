@@ -29,7 +29,7 @@ export function factorial(num) {
 
 export const formulaValidator = (value, required = true, ...validators) => {
   // @todo Починить эту регулярку
-  
+
   const regex = /^[|.`x yzsqrt()sexpsinco<>=st,ancotlg0-9+\\^*/-]+$/gi;
 
   const formValidator = value => {
@@ -41,6 +41,10 @@ export const formulaValidator = (value, required = true, ...validators) => {
   };
 
   return validator(value, formValidator, ...validators);
+};
+
+export const arrayNumber = (value, ...validators) => {
+  return validator(value, required('Введите число'), ...validators);
 };
 
 export const sinCosValidator = (value, ...validators) =>
@@ -81,9 +85,6 @@ export const numberValidator2 = (
     max(maximum),
     ...validators,
   );
-
-export const test = (value, ...validators) =>
-  validator(value, required('Введите число'), ...validators);
 
 export const scalarNumberValidator = (value, name, ...validators) =>
   validator(

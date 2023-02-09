@@ -9,7 +9,7 @@
             :show-validation="hasAttempt && validators.number.invalid"
             :validator="validators.number"
           >
-            Число <Formula text="n" />:
+            Число <Formula text="a" />:
           </CalculatorInput>
         </div>
         <SwTransitionHeight>
@@ -24,7 +24,7 @@
       <div class="title">Разложения числа на простые множетели</div>
       <div>
         <div class="title">Дано:</div>
-        <div><Formula :text="`n = ${form.number}`" /></div>
+        <div><Formula :text="`a = ${form.number}`" /></div>
       </div>
       <div />
       <div>

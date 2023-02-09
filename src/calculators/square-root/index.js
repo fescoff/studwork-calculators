@@ -33,8 +33,8 @@ export default {
 
     decision() {
       if (this.formInvalid) return null;
-
-      return Math.sqrt(this.number);
+      const result = Math.sqrt(this.number);
+      return this.round(result, 3);
     },
   },
 };

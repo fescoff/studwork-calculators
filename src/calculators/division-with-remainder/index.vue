@@ -1,3 +1,5 @@
+import formula from '../formula';
+
 <template>
   <Carcass ref="carcass" :stats="stats">
     <template slot="source">
@@ -10,14 +12,14 @@
             :show-validation="hasAttempt && validators.dividend.invalid"
             :validator="validators.dividend"
           >
-            Делимое:
+            Делимое <formula text="a" />:
           </CalculatorInput>
           <CalculatorInput
             v-model="form.divisor"
             :show-validation="hasAttempt && validators.divisor.invalid"
             :validator="validators.divisor"
           >
-            Делитель:
+            Делитель <formula text="b" />:
           </CalculatorInput>
         </div>
 

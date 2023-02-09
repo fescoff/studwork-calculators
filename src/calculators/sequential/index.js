@@ -27,13 +27,11 @@ export default {
     },
     errorMessage() {
       if (!this.hasAttempt || this.formInvalid) return null;
-
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-
       function isSequential(num) {
         for (let i = 1; i < num; i++) {
           let sum = 0;

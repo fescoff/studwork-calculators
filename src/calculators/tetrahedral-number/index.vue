@@ -2,7 +2,7 @@
   <Carcass ref="carcass" :stats="stats">
     <template slot="source">
       <form class="v-rhythm" @submit.prevent="doDecision">
-        <div class="row title">Введите n:</div>
+        <div class="row title">Введите число:</div>
         <div class="row -inputs-list">
           <CalculatorInput
             v-model="form.number"

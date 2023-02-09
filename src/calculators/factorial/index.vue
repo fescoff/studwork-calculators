@@ -10,7 +10,7 @@
             :show-validation="hasAttempt && validators.number.invalid"
             :validator="validators.number"
           >
-            Число:
+            Число <Formula text="n" />:
           </CalculatorInput>
         </div>
 
@@ -31,6 +31,17 @@
         <div><Formula :text="`n = ${form.number}`" /></div>
       </div>
       <div />
+      <div>
+        <div class="title">Решение:</div>
+        <div>
+          Формула нахождения факториала:
+          <Formula
+            :config="{ displayMode: true }"
+            :text="`n! = 1 \\cdot 2 \\cdot … \\cdot n`"
+          />
+          <div>Где n – это число, а n! – факториал этого числа.</div>
+        </div>
+      </div>
       <div>
         <div class="title">Ответ:</div>
         <div><Formula :text="`${form.number}! = ${decision}`" /></div>

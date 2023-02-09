@@ -5,7 +5,7 @@ import mixin from '../mixin';
 
 export default {
   mixins: [mixin],
-  name: 'tetrahedral-number',
+  name: 'square-pyramidal-number',
   data: () => ({
     form: {
       number: '',
@@ -26,7 +26,6 @@ export default {
     },
 
     errorMessage() {
-
       if (!this.hasAttempt || this.formInvalid) return null;
 
       return null;

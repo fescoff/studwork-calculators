@@ -14,7 +14,7 @@ export default {
   computed: {
     number() {
       return inputNumber(this.form.number, {
-        float: true,
+        float: false,
         negative: false,
         divisional: false,
       });
