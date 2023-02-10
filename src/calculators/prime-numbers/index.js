@@ -14,8 +14,8 @@ export default {
   computed: {
     number() {
       return inputNumber(this.form.number, {
-        float: false,
-        negative: false,
+        float: true,
+        negative: true,
         divisional: false,
       });
     },
@@ -26,7 +26,7 @@ export default {
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
 
       return null;
     },

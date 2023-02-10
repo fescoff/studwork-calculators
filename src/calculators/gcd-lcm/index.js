@@ -34,8 +34,13 @@ export default {
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
-
+      if (!this.hasAttempt || this.formInvalid) {
+        if (this.validators.a.message.length > 1) {
+          return this.validators.a.message;
+        } else if (this.validators.b.message.length > 1) {
+          return this.validators.b.message;
+        }
+      }
       return null;
     },
 

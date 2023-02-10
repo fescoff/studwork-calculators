@@ -29,13 +29,19 @@ export default {
     },
     validators() {
       return {
-        dividend: scalarNumberValidator(this.dividend),
-        divisor: scalarNumberValidator(this.divisor),
+        dividend: scalarNumberValidator(this.dividend, 'Делимое'),
+        divisor: scalarNumberValidator(this.divisor, 'Делитель'),
       };
     },
-    errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
 
+    errorMessage() {
+      if (!this.hasAttempt || this.formInvalid) {
+        if (this.validators.dividend.message.length > 1) {
+          return this.validators.dividend.message;
+        } else if (this.validators.divisor.message.length > 1) {
+          return this.validators.divisor.message;
+        }
+      }
       return null;
     },
 

@@ -16,7 +16,7 @@ export default {
     number() {
       return inputNumber(this.form.number, {
         float: true,
-        negative: false,
+        negative: true,
         divisional: true,
       });
     },
@@ -35,8 +35,13 @@ export default {
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
-      
+      if (!this.hasAttempt || this.formInvalid) {
+        if (this.validators.number.message.length > 1) {
+          return this.validators.number.message;
+        } else if (this.validators.power.message.length > 1) {
+          return this.validators.power.message;
+        }
+      }
       return null;
     },
 

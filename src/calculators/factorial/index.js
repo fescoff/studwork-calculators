@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { scalarNumberValidator } from '../utils';
+import { numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -14,18 +14,18 @@ export default {
   computed: {
     number() {
       return inputNumber(this.form.number, {
-        float: false,
-        negative: false,
-        divisional: false,
+        float: true,
+        negative: true,
+        divisional: true,
       });
     },
     validators() {
       return {
-        number: scalarNumberValidator(this.number),
+        number: numberValidator(this.number, 'Число'),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
       return null;
     },
 

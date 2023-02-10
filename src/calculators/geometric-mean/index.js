@@ -23,7 +23,7 @@ export default {
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.numbers.message;
       return null;
     },
 

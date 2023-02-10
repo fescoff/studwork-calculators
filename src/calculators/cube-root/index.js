@@ -22,12 +22,12 @@ export default {
 
     validators() {
       return {
-        number: numberValidator2(this.number, { minimum: -99999, maximum: 99999 }),
+        number: numberValidator2(this.number, { minimum: -99999999, maximum: 99999999 }),
       };
     },
 
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
       return null;
     },
 

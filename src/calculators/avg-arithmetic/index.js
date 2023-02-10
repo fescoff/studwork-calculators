@@ -1,4 +1,4 @@
-import { arrayNumber } from '../utils';
+import { arrayNumber, numberValidator2 } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -16,13 +16,14 @@ export default {
         .map(x => parseFloat(x))
         .filter(x => !isNaN(x));
     },
+
     validators() {
       return {
-        numbers: arrayNumber(this.numbers),
+        numbers: arrayNumber(this.numbers, { minimum: -999999 }),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.numbers.message;
       return null;
     },
 

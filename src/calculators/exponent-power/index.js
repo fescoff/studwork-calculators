@@ -33,7 +33,8 @@ export default {
     decision() {
       if (this.formInvalid) return null;
       const exp = 2.7182818284;
-      return Math.pow(exp, this.power);
+      const result = Math.pow(exp, this.power);
+      return this.round(result, 10);
     },
   },
 };

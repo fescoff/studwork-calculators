@@ -43,8 +43,25 @@ export const formulaValidator = (value, required = true, ...validators) => {
   return validator(value, formValidator, ...validators);
 };
 
-export const arrayNumber = (value, ...validators) => {
-  return validator(value, required('Введите число'), ...validators);
+export const arrayNumber = (
+  value,
+  { maximum = 9999999, minimum = null } = {},
+  ...validators
+) => {
+  if (value.length === 0) return validator(value, required2('Введите число'));
+  for (let i = 0; i < value.length; i++) {
+    const result = validator(
+      value[i],
+      minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
+      max(maximum),
+      isNumber('Число некорректно'),
+      ...validators,
+    );
+    if (result.message) {
+      return result;
+    }
+  }
+  return validator(value[0]);
 };
 
 export const sinCosValidator = (value, ...validators) =>

@@ -30,12 +30,19 @@ export default {
 
     validators() {
       return {
-        number: scalarNumberValidator(this.number),
+        number: scalarNumberValidator(this.number, 'Число'),
         precision: numberValidator(this.precision, { minimum: 0 }),
       };
     },
+
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) {
+        if (this.validators.number.message.length > 1) {
+          return this.validators.number.message;
+        } else if (this.validators.precision.message.length > 1) {
+          return this.validators.precision.message;
+        }
+      }
       return null;
     },
 

@@ -18,11 +18,11 @@ export default {
     },
     validators() {
       return {
-        numbers: arrayNumber(this.numbers),
+        numbers: arrayNumber(this.numbers, { minimum: -999999 }),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.numbers.message;
 
       return null;
     },

@@ -15,18 +15,18 @@ export default {
     number() {
       return inputNumber(this.form.number, {
         float: false,
-        negative: false,
+        negative: true,
         divisional: false,
       });
     },
 
     validators() {
       return {
-        number: scalarNumberValidator(this.number, 'Длина'),
+        number: scalarNumberValidator(this.number, 'Число'),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
       return null;
     },
 

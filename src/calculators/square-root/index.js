@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { numberValidator2 } from '../utils';
+import { scalarNumberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -15,18 +15,18 @@ export default {
     number() {
       return inputNumber(this.form.number, {
         float: true,
-        negative: false,
+        negative: true,
         divisional: true,
       });
     },
 
     validators() {
       return {
-        number: numberValidator2(this.number, { minimum: -99999, maximum: 99999 }),
+        number: scalarNumberValidator(this.number, 'Число'),
       };
     },
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
 
       return null;
     },
@@ -34,7 +34,7 @@ export default {
     decision() {
       if (this.formInvalid) return null;
       const result = Math.sqrt(this.number);
-      return this.round(result, 3);
+      return this.round(result, 10);
     },
   },
 };

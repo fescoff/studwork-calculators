@@ -26,14 +26,12 @@ export default {
     },
 
     errorMessage() {
-      if (!this.hasAttempt || this.formInvalid) return null;
-
+      if (!this.hasAttempt || this.formInvalid) return this.validators.number.message;
       return null;
     },
 
     decision() {
       if (this.formInvalid) return null;
-
       return (this.number * (2 * this.number * this.number + 1)) / 3;
     },
   },
