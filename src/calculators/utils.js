@@ -1,6 +1,7 @@
 import {
   validator,
   required2,
+  required,
   isNumber,
   isIntegerNumber,
   min,
@@ -23,13 +24,13 @@ export function factorial(num) {
   for (let i = 1; i <= num; i++) {
     result *= i;
   }
-
   return result;
 }
 
 export const formulaValidator = (value, required = true, ...validators) => {
   // @todo Починить эту регулярку
-  const regex = /^[|.`xyzsqrt()sexpsinco<>=st,ancotlg0-9+\\^*/-]+$/gi;
+
+  const regex = /^[|.`x yzsqrt()sexpsinco<>=st,ancotlg0-9+\\^*/-]+$/gi;
 
   const formValidator = value => {
     value = value.trim();
@@ -40,6 +41,27 @@ export const formulaValidator = (value, required = true, ...validators) => {
   };
 
   return validator(value, formValidator, ...validators);
+};
+
+export const arrayNumber = (
+  value,
+  { maximum = null, minimum = null } = {},
+  ...validators
+) => {
+  if (value.length === 0) return validator(value, required2('Введите число'));
+  for (let i = 0; i < value.length; i++) {
+    const result = validator(
+      value[i],
+      minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
+      maximum !== null ? max(maximum) : max(Infinity),
+      isNumber('Число некорректно'),
+      ...validators,
+    );
+    if (result.message) {
+      return result;
+    }
+  }
+  return validator(value[0]);
 };
 
 export const sinCosValidator = (value, ...validators) =>
@@ -54,7 +76,7 @@ export const sinCosValidator = (value, ...validators) =>
 
 export const numberValidator = (
   value,
-  { maximum = 99, minimum = null } = {},
+  { maximum = null, minimum = null } = {},
   ...validators
 ) =>
   validator(
@@ -63,14 +85,28 @@ export const numberValidator = (
     isNumber('Число некорректно'),
     isIntegerNumber('Должно быть целым числом'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-    max(maximum),
+    maximum !== null ? max(maximum) : max(Infinity),
+    ...validators,
+  );
+
+export const numberValidator2 = (
+  value,
+  { maximum = null, minimum = null } = {},
+  ...validators
+) =>
+  validator(
+    value,
+    required2('Введите число'),
+    isNumber('Число некорректно'),
+    minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
+    maximum !== null ? max(maximum) : max(Infinity),
     ...validators,
   );
 
 export const scalarNumberValidator = (value, name, ...validators) =>
   validator(
     value,
-    required2('Введите число'),
+    required2('Введите  число'),
     isNumber('Число некорректно'),
     min(0.001, name + ' должна быть больше нуля'),
     max(10000),
@@ -118,21 +154,21 @@ export const radianValidator = (value, ...validators) =>
   );
 
 export const radGrad = {
-  '0': 0,
-  '0.524': 30,
-  '0.785': 45,
-  '1.047': 60,
-  '1.571': 90,
-  '2.094': 120,
-  '2.356': 135,
-  '2.618': 150,
-  '3.142': 180,
-  '3.665': 210,
-  '3.927': 225,
-  '4.189': 240,
-  '4.712': 270,
-  '5.236': 300,
-  '5.498': 315,
-  '5.76': 330,
-  '6.283': 360,
+  0: 0,
+  0.524: 30,
+  0.785: 45,
+  1.047: 60,
+  1.571: 90,
+  2.094: 120,
+  2.356: 135,
+  2.618: 150,
+  3.142: 180,
+  3.665: 210,
+  3.927: 225,
+  4.189: 240,
+  4.712: 270,
+  5.236: 300,
+  5.498: 315,
+  5.76: 330,
+  6.283: 360,
 };

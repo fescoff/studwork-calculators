@@ -25,6 +25,102 @@ export const calculators = {
     component: () => import('./matrix-sum'),
     title: 'Сложение матриц',
   },
+  fibonacci: {
+    component: () => import('./fibonacci-numbers'),
+    title: 'Ряд чисел Фибоначи',
+  },
+  factorial: {
+    component: () => import('./factorial'),
+    title: 'Факториал числа',
+  },
+  roundedNumbers: {
+    component: () => import('./rounded-numbers'),
+    title: 'Округление чисел',
+  },
+  perfectSquare: {
+    component: () => import('./perfect-square'),
+    title: 'Идеальный квадрат',
+  },
+  divisionWithRemainder: {
+    component: () => import('./division-with-remainder'),
+    title: 'Деление с остатком',
+  },
+  sumOfNumbersToN: {
+    component: () => import('./sum-of-numbers-to-n'),
+    title: 'Сумма числел от 1 до N',
+  },
+  sumOfNumbersToN: {
+    component: () => import('./gcd-lcm'),
+    title: 'НОД и НОК двух чисел',
+  },
+  sequential: {
+    component: () => import('./sequential'),
+    title: 'Последовательное число',
+  },
+  primeNumbers: {
+    component: () => import('./prime-numbers'),
+    title: 'Простое число',
+  },
+  primeFactors: {
+    component: () => import('./prime-factors'),
+    title: 'Разложение числа на простые множители',
+  },
+  numberExponentiations: {
+    component: () => import('./number-exponentiation'),
+    title: 'Возведение числа в степень',
+  },
+  exponentPower: {
+    component: () => import('./exponent-power'),
+    title: 'Возведение экспоненты в степень',
+  },
+  squareRoot: {
+    component: () => import('./square-root'),
+    title: 'Квадратный корень',
+  },
+  cubeRoot: {
+    component: () => import('./cube-root'),
+    title: 'Кубический корень',
+  },
+  nthRoot: {
+    component: () => import('./nth-root'),
+    title: 'Извлечение корня n-й степени из числа',
+  },
+  avgArithmetic: {
+    component: () => import('./avg-arithmetic'),
+    title: 'Среднее арифметическое нескольких чисел',
+  },
+  geometricMean: {
+    component: () => import('./geometric-mean'),
+    title: 'Среднее геометрическое нескольких чисел',
+  },
+  harmonicMean: {
+    component: () => import('./harmonic-mean'),
+    title: 'Среднее гармоническое нескольких чисел',
+  },
+  standardDeviation: {
+    component: () => import('./standard-deviation'),
+    title: 'Среднее квадратичное отклонение',
+  },
+  sumOfNumbers: {
+    component: () => import('./sum-of-numbers'),
+    title: 'Сумма нескольких чисел',
+  },
+  multiplyOfNumbers: {
+    component: () => import('./multiply-of-numbers'),
+    title: 'Произведение нескольких чисел',
+  },
+  tetrahedralNumber: {
+    component: () => import('./tetrahedral-number'),
+    title: 'Тетраэдральное число',
+  },
+  squarePyramidalNumber: {
+    component: () => import('./square-pyramidal-number'),
+    title: 'Квадратное пирамидальное число',
+  },
+  octahedralNumber: {
+    component: () => import('./octahedral-number'),
+    title: 'Октаэдральное число',
+  },
   // example: {
   //   component: () => import('./'),
   //   title: '',
