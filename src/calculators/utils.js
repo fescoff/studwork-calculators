@@ -53,7 +53,7 @@ export const arrayNumber = (
     const result = validator(
       value[i],
       minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-      maximum !== null ? max(maximum) : max(9999999999),
+      maximum !== null ? max(maximum) : max(Infinity),
       isNumber('Число некорректно'),
       ...validators,
     );
@@ -85,7 +85,7 @@ export const numberValidator = (
     isNumber('Число некорректно'),
     isIntegerNumber('Должно быть целым числом'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-    maximum !== null ? max(maximum) : max(9999999999),
+    maximum !== null ? max(maximum) : max(Infinity),
     ...validators,
   );
 
@@ -99,7 +99,7 @@ export const numberValidator2 = (
     required2('Введите число'),
     isNumber('Число некорректно'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-    maximum !== null ? max(maximum) : max(9999999999),
+    maximum !== null ? max(maximum) : max(Infinity),
     ...validators,
   );
 

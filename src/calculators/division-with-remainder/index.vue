@@ -1,5 +1,3 @@
-import formula from '../formula';
-
 <template>
   <Carcass ref="carcass" :stats="stats">
     <template slot="source">
