@@ -21,7 +21,7 @@ export default {
     },
     validators() {
       return {
-        n: numberValidator(this.n),
+        n: numberValidator(this.n, { minimum: 1, maximum: 999 }),
       };
     },
     errorMessage() {

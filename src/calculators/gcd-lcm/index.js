@@ -29,8 +29,8 @@ export default {
     },
     validators() {
       return {
-        a: numberValidator(this.a, { maximum: 99999 }),
-        b: numberValidator(this.b, { maximum: 99999 }),
+        a: numberValidator(this.a),
+        b: numberValidator(this.b),
       };
     },
     errorMessage() {

@@ -42,7 +42,7 @@
               : 'Не последовательное'
           }}
 
-          <pre>{{ decision }}</pre>
+          <div>{{ decision }}</div>
         </div>
       </div>
     </template>

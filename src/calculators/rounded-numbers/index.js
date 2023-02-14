@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { scalarNumberValidator, numberValidator } from '../utils';
+import { numberValidator2, numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -22,7 +22,7 @@ export default {
     },
     precision() {
       return inputNumber(this.form.precision, {
-        float: false,
+        float: true,
         negative: true,
         divisional: false,
       });
@@ -30,8 +30,8 @@ export default {
 
     validators() {
       return {
-        number: scalarNumberValidator(this.number, 'Число'),
-        precision: numberValidator(this.precision, { minimum: 0 }),
+        number: numberValidator2(this.number),
+        precision: numberValidator(this.precision),
       };
     },
 

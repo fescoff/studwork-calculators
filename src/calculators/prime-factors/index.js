@@ -23,7 +23,7 @@ export default {
 
     validators() {
       return {
-        number: numberValidator(this.number, { maximum: 1000000 }),
+        number: numberValidator(this.number),
       };
     },
     errorMessage() {

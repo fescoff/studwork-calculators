@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { scalarNumberValidator } from '../utils';
+import { numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -22,7 +22,7 @@ export default {
 
     validators() {
       return {
-        number: scalarNumberValidator(this.number, 'Число'),
+        number: numberValidator(this.number, { maximum: 99999 }),
       };
     },
     errorMessage() {

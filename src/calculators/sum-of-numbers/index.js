@@ -18,7 +18,7 @@ export default {
     },
     validators() {
       return {
-        numbers: arrayNumber(this.numbers),
+        numbers: arrayNumber(this.numbers, { minimum: -9999999999 }),
       };
     },
 

@@ -45,7 +45,7 @@ export const formulaValidator = (value, required = true, ...validators) => {
 
 export const arrayNumber = (
   value,
-  { maximum = 9999999, minimum = null } = {},
+  { maximum = null, minimum = null } = {},
   ...validators
 ) => {
   if (value.length === 0) return validator(value, required2('Введите число'));
@@ -53,7 +53,7 @@ export const arrayNumber = (
     const result = validator(
       value[i],
       minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-      max(maximum),
+      maximum !== null ? max(maximum) : max(9999999999),
       isNumber('Число некорректно'),
       ...validators,
     );
@@ -76,7 +76,7 @@ export const sinCosValidator = (value, ...validators) =>
 
 export const numberValidator = (
   value,
-  { maximum = 99, minimum = null } = {},
+  { maximum = null, minimum = null } = {},
   ...validators
 ) =>
   validator(
@@ -85,13 +85,13 @@ export const numberValidator = (
     isNumber('Число некорректно'),
     isIntegerNumber('Должно быть целым числом'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-    max(maximum),
+    maximum !== null ? max(maximum) : max(9999999999),
     ...validators,
   );
 
 export const numberValidator2 = (
   value,
-  { maximum = 99, minimum = null } = {},
+  { maximum = null, minimum = null } = {},
   ...validators
 ) =>
   validator(
@@ -99,14 +99,14 @@ export const numberValidator2 = (
     required2('Введите число'),
     isNumber('Число некорректно'),
     minimum !== null ? min(minimum) : min(0.001, 'Должно быть больше нуля'),
-    max(maximum),
+    maximum !== null ? max(maximum) : max(9999999999),
     ...validators,
   );
 
 export const scalarNumberValidator = (value, name, ...validators) =>
   validator(
     value,
-    required2('Введите число'),
+    required2('Введите  число'),
     isNumber('Число некорректно'),
     min(0.001, name + ' должна быть больше нуля'),
     max(10000),

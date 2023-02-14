@@ -1,6 +1,6 @@
 import { inputNumber } from '@/utils';
 
-import { scalarNumberValidator } from '../utils';
+import { numberValidator } from '../utils';
 import mixin from '../mixin';
 
 export default {
@@ -29,8 +29,8 @@ export default {
     },
     validators() {
       return {
-        dividend: scalarNumberValidator(this.dividend, 'Делимое'),
-        divisor: scalarNumberValidator(this.divisor, 'Делитель'),
+        dividend: numberValidator(this.dividend, { maximum: 9999999999 }),
+        divisor: numberValidator(this.divisor, { maximum: 9999999999 }),
       };
     },
 

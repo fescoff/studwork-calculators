@@ -21,7 +21,7 @@ export default {
     },
     validators() {
       return {
-        number: numberValidator(this.number, 'Число'),
+        number: numberValidator(this.number, { maximum: 100 }),
       };
     },
     errorMessage() {
